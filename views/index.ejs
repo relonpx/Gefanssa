@@ -1,0 +1,76 @@
+<main>
+  <nav>
+    <h1 class="logo">Gefanssa</h1>
+    <i class="uil uil-moon toggle-btn"></i>
+  </nav>
+  <div class="container">
+    <div class="showcase">
+      <div class="order-wrap">
+        <h1>GEFANSSA</h1>
+        <h1 style="margin-bottom: 1.5rem;">FASHION</h1>
+        <a href="https://api.whatsapp.com/send?phone=6281380443303">Order Now</a>
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  105.jpg" alt="" style="object-position: 50% 30%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  249.jpg" alt="" style="object-position: 65% 25%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  242.jpg" alt="" style="object-position: 20% 40%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  276.jpg" alt="" style="object-position: 20% 60%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  12.jpg" alt="" style="object-position: 30% 40%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  79.jpg" alt="" style="object-position: 20% 40%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  166.jpg" alt="" style="object-position: 20% 20%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  170.jpg" alt="" style="object-position: 40% 100%;">
+      </div>
+      <div class="showcase-card fade">
+        <img src="assets/Gefansa -  201.jpg" alt="" style="object-position: 60% 20%;">
+      </div>
+    </div>
+    <div class="more">
+      <h1>More from this shop</h1>
+      <a href="/products">See all</a>
+    </div>
+    <div class="products">
+      <img src="assets/Gefansa -  166.jpg" alt="">
+      <img src="assets/Gefansa -  350.jpg" alt="">
+      <img src="assets/Gefansa -  384.jpg" alt="">
+      <img src="assets/Gefansa -  314.jpg" alt="">
+      <img src="assets/Gefansa -  398.jpg" alt="">
+      <img src="assets/Gefansa -  391.jpg" alt="">
+      <img src="assets/Gefansa -  372.jpg" alt="">
+      <img src="assets/Gefansa -  298.jpg" alt="">
+    </div>
+  </div>
+  <a class="scrollBtn">
+    <i class="uil uil-arrow-up"></i>
+  </a>
+</main>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("showcase-card");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+  }
+</script>

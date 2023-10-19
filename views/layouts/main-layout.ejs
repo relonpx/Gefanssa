@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS FILES -->
+  <link rel="stylesheet" href="/css/index.css">
+  <!-- ICON SCOUT -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <title><%- title %></title>
+</head>
+<body>
+  <%- body %>
+</body>
+
+<script>
+  const toggle_btn = document.querySelector(".toggle-btn");
+  let firstTheme = localStorage.getItem("dark");
+
+  changeTheme(+firstTheme);
+
+  function changeTheme(isDark) {
+    if (isDark) {
+        document.body.classList.add("dark");
+        toggle_btn.classList.replace("uil-moon", "uil-sun");
+        localStorage.setItem("dark", 1);
+    } else {
+        document.body.classList.remove("dark");
+        toggle_btn.classList.replace("uil-sun", "uil-moon");
+        localStorage.setItem("dark", 0);
+    }
+  }
+
+  toggle_btn.addEventListener("click", () => {
+    changeTheme(!document.body.classList.contains("dark"));
+  });
+
+  /* Reveal Animation*/
+  let sr = ScrollReveal({ duration: 2500, distance: "60px", });
+
+  sr.reveal(".showcase", { delay: 200, duration: 1000, distance: '100px', easing: 'cubic-bezier(.4,-0.01,.23,1.01)' });
+  sr.reveal(".more", { delay: 800, duration: 1000, distance: '100px', easing: 'cubic-bezier(.4,-0.01,.23,1.01)' });
+  sr.reveal(".products", { delay: 1400, duration: 1000, distance: '100px', easing: 'cubic-bezier(.4,-0.01,.23,1.01)' });
+
+  const scrollToTopBtn = document.querySelector(".scrollBtn");
+  const rootElement = document.documentElement;
+
+  function handleScroll() {
+    // Do something on scroll
+    const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+    if (window.pageYOffset > 200) {
+      // Show button
+      scrollToTopBtn.classList.add("showBtn");
+    } else {
+      // Hide button
+      scrollToTopBtn.classList.remove("showBtn");
+    }
+  }
+
+  function scrollToTop() {
+    // Scroll to top logic
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+  scrollToTopBtn.addEventListener("click", scrollToTop);
+  document.addEventListener("scroll", handleScroll);
+</script>
+
+</html>
