@@ -130,13 +130,13 @@ nav{
 }
 
 .more h1{
-  font-size: .7rem;
+  font-size: .8rem;
   font-weight: 500;
   color: var(--text-xolor);
 }
 
 .more a{
-  font-size: .7rem;
+  font-size: .8rem;
   color: #00aced;
 }
 
@@ -145,12 +145,20 @@ nav{
   align-items: stretch;
   gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 
 .products img{
+  display: block;
+  object-fit: cover;
   border-radius: 10px;
   max-width: 100%;
+}
+
+.large{
+  grid-column: span 2;
+  height: 280px;
+  
 }
 
 .scrollBtn {
