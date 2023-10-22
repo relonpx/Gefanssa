@@ -161,6 +161,8 @@ nav {
   object-fit: cover;
   border-radius: 10px;
   max-width: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .large {
@@ -209,6 +211,10 @@ nav {
   background: linear-gradient(90deg, #eee, #f9f9f9, #eee);
   background-size: 200%;
   animation: skeleton 1s infinite reverse;
+}
+
+.products img:hover{
+  filter: brightness(50%);
 }
 
 .modal {
