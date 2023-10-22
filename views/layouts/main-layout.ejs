@@ -85,12 +85,15 @@
   const prd_section = document.querySelector(".prd");
   const images = document.querySelectorAll(".images img");
   const modal_overlay = document.querySelector(".modal-overlay");
+  const scrollTop = document.querySelector('.scroll')
 
   let currentIndex = 0
   
   imageClick.forEach((icn, i) => {
     icn.addEventListener('click', () => {
       prd_section.classList.add("open");
+      document.body.classList.add("stopScrolling");
+      scrollTop.classList.remove('scrollBtn')
       currentIndex = i;
       changeImage(currentIndex);
     })
@@ -98,6 +101,8 @@
 
   modal_overlay.addEventListener("click", () => {
     prd_section.classList.remove("open");
+    scrollTop.classList.add('scrollBtn')
+    document.body.classList.remove("stopScrolling");
   });
 
   function changeImage(index) {

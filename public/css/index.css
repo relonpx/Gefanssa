@@ -32,6 +32,11 @@ body.dark {
   --text-xolor: var(--black-color);
 }
 
+body.stopScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 a,
 button {
   text-decoration: none;
