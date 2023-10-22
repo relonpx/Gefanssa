@@ -15,6 +15,7 @@
 </body>
 
 <script>
+  // CHANGE THEME FUNCTION
   const toggle_btn = document.querySelector(".toggle-btn");
   let firstTheme = localStorage.getItem("dark");
 
@@ -36,7 +37,7 @@
     changeTheme(!document.body.classList.contains("dark"));
   });
 
-  /* Reveal Animation*/
+  /* REVEAL ANIMATION*/
   let sr = ScrollReveal({ duration: 2500, distance: "60px", });
 
   sr.reveal(".showcase", { delay: 200, duration: 1000, distance: '100px', easing: 'cubic-bezier(.4,-0.01,.23,1.01)' });
@@ -58,6 +59,7 @@
     }
   }
 
+  // SCROLL TO TOP FUNCTION
   function scrollToTop() {
     // Scroll to top logic
     window.scrollTo({
@@ -68,6 +70,15 @@
 
   scrollToTopBtn.addEventListener("click", scrollToTop);
   document.addEventListener("scroll", handleScroll);
+
+  // SKELETON LOADER
+  const allSkeleton = document.querySelectorAll('.skeleton')
+
+  window.addEventListener('load', function(){
+    allSkeleton.forEach(item => {
+      item.classList.remove('skeleton')
+    })
+  })
 </script>
 
 </html>
