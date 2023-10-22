@@ -79,6 +79,31 @@
       item.classList.remove('skeleton')
     })
   })
+
+  // ZOOM IMAGE
+  const imageClick = document.querySelectorAll('.small-img')
+  const prd_section = document.querySelector(".prd");
+  const images = document.querySelectorAll(".images img");
+  const modal_overlay = document.querySelector(".modal-overlay");
+
+  let currentIndex = 0
+  
+  imageClick.forEach((icn, i) => {
+    icn.addEventListener('click', () => {
+      prd_section.classList.add("open");
+      currentIndex = i;
+      changeImage(currentIndex);
+    })
+  })
+
+  modal_overlay.addEventListener("click", () => {
+    prd_section.classList.remove("open");
+  });
+
+  function changeImage(index) {
+    images.forEach((img) => img.classList.remove("showImage"));
+    images[index].classList.add("showImage");
+  };
 </script>
 
 </html>
